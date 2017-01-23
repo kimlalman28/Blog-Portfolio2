@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Kim's Blog</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body id="blogbody">
+<h1 id="blogtitle">Kim's Blog</h1>
+
+	<ul>
+		<li><a href="/portfolio" class="portlink">Portfolio</a></li>
+		<li><a href="/blog" class="portlink">Blog</a></li>
+	</ul>
+
+		<br>
+		<br>
+		<br>
+	
+<form action="/blog" method="post">
+	<input type="text" name="title" placeholder="Post Title" id="title">
+	<br>
+	<br>
+	<textarea name="body" type="text" cols="70" rows="7" placeholder="What's new...?" id="body"></textarea>
+	<br>
+	<br>
+	<input type="submit" value="Submit Blog Post" id="submit">
+</form>
+
+	<br>
+	<hr>
+<h3>Blog Posts</h3>
+
+
+<% for(var i=(data.length-1); i>=0; i--) { %>
+	<div id="blogpost">
+		<h3><%= data[i].title %></h3>
+		<p id="post"><%=data[i].body%></p>
+	</div>
+	<% } %>
+
+
+
+</body>
+</html>
