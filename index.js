@@ -12,9 +12,14 @@ app.use(express.static('public')); //allow use to style.css
 app.set('view engine', 'ejs'); //to use ejs
 
 //var dbURL = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/blog'; //connection string to database
+var dbURL = process.env.DATABASE_URL;
+
+app.get('/', function(req, res){
+	res.redirect('/portfolio')
+})
 
 app.get('/blog', function (req, res) { //get request for blog page
-	pg.connect(process.env.DATABASE_URL, function(err, client, done){
+	pg.connect(dbURL, function(err, client, done){
 		client.query('select * from posts', function(err, result){
 			res.render('blog', {data: result.rows}) 
 			done();
@@ -24,7 +29,7 @@ app.get('/blog', function (req, res) { //get request for blog page
 })
 
 app.post('/blog', function(req, res){ //post request when user submits a post
-	pg.connect(process.env.DATABASE_URL, function(err, client, done){
+	pg.connect(dbURL, function(err, client, done){
 		client.query(`insert into posts(title, body) values ('${req.body.title}', '${req.body.body}')`,function(err, result){
 			res.redirect('/blog');
 			done();
@@ -38,7 +43,7 @@ app.get('/portfolio', function(req, res){ //get request for portfolio page. Only
 })
 
 app.get('*', function(req, res){
-	res.status(404).send("Page not found!")
+	res.status(404).send("Page not found! Try route to /portfolio or /blog" )
 })
 
 
