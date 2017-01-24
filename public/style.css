@@ -87,6 +87,7 @@ h3{
 /***************************PORTFOLIO********************************/
 #portfoliobody{
 	background: linear-gradient(to bottom right, black, gray);
+	margin: 0;
 }
 
 header{
@@ -121,7 +122,7 @@ header{
 	display: inline-block;
 }
 
-#pnav li .plink{
+#pnav li .plink, #pnav li .link{
 	text-align: center;
 	text-decoration: none;
 	color: snow;
@@ -132,14 +133,15 @@ header{
 	letter-spacing: .2em;
 }
 
-#pnav li .plink:hover{
+#pnav li .plink:hover, #pnav li .link:hover{
 	color: black;
 }
 
 
 #socialmedia{
 	text-align:center;
-	margin: 20px auto;
+	margin: 0 auto;
+	background-color: gray; 
 }
 
 
@@ -205,6 +207,10 @@ h5{
 	font-size: 20px;
 	font-family: palatino;
 	margin: 0;
+}
+
+#aboutmediv{
+	margin: 0 auto;
 }
 
 
