@@ -11,8 +11,8 @@ app.use(express.static('public')); //allow use to style.css
 
 app.set('view engine', 'ejs'); //to use ejs
 
-//var dbURL = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/blog'; //connection string to database
-var dbURL = process.env.DATABASE_URL;
+var dbURL = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/blog'; //connection string to database
+//var dbURL = process.env.DATABASE_URL;
 
 app.get('/', function(req, res){
 	res.redirect('/portfolio')
