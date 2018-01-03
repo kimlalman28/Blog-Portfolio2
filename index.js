@@ -17,6 +17,7 @@ app.get('/', function(req, res){
 	res.redirect('/portfolio')
 })
 
+
 app.get('/blog', function (req, res) { //get request for blog page
 	pg.connect(dbURL, function(err, client, done){
 		client.query('select * from posts', function(err, result){
@@ -26,6 +27,7 @@ app.get('/blog', function (req, res) { //get request for blog page
 		})
 	})
 })
+
 
 app.post('/blog', function(req, res){ //post request when user submits a post
 	pg.connect(dbURL, function(err, client, done){

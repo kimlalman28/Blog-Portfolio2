@@ -1,10 +1,12 @@
-#Description
+Blog + Portfolio
+======
+A simple portfolio with a connection to a blog. The blog uses PostgreSQL database to store blog posts. 
 
-A simple portfolio with a connection to a blog. The blog uses a PostgreSQL database to store blog posts. 
-
-routes:
+routes: <br />
  /portfolio  --> portfolio
  
  /blog  --> blog
-
- Hosted on Heroku: https://radiant-headland-87323.herokuapp.com/portfolio
+ <br />
+ Hosted on Heroku: <br />
+ 
+ https://radiant-headland-87323.herokuapp.com/portfolio
